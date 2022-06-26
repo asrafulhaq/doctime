@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\Models\Patient;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PatientAuthController extends Controller
 {
@@ -50,7 +51,19 @@ class PatientAuthController extends Controller
             'password'              => 'required',
         ]);
 
-       return $request -> all();
+       
+        // auth process
+        if( Auth::guard('patient') -> attempt([ 'email' => $request -> email , 'password' => $request -> password ]) || Auth::guard('patient') -> attempt([ 'mobile' => $request -> email , 'password' => $request -> password ]) ){
+
+            return redirect() -> route('patient.dash.page');
+
+        }else {
+            return redirect() -> route('login.page') -> with('danger', 'Wrong email or password');
+        }
+
+
+
+
 
     }
 
