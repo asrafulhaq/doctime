@@ -53,7 +53,7 @@ class PatientAuthController extends Controller
 
        
         // auth process
-        if( Auth::guard('patient') -> attempt([ 'email' => $request -> email , 'password' => $request -> password ]) || Auth::guard('patient') -> attempt([ 'mobile' => $request -> email , 'password' => $request -> password ]) ){
+        if( Auth::guard('patient') -> attempt([ 'email' => $request -> email , 'password' => $request -> password ]) || Auth::guard('patient') -> attempt([ 'mobile' => $request -> email , 'password' => $request -> password ]) ){    
 
             return redirect() -> route('patient.dash.page');
 
@@ -65,6 +65,16 @@ class PatientAuthController extends Controller
 
 
 
+    }
+
+    /**
+     * Patient Logout 
+     */
+    public function logout()
+    {
+        Auth::guard('patient') -> logout();
+        return redirect() -> route('login.page');
+        
     }
 
 
