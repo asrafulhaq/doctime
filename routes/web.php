@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController; 
+use App\Http\Controllers\Auth\PatientAuthController;
 
 
 
@@ -12,7 +13,8 @@ Route::get('/login', [ FrontendController::class, 'showLoginPage' ]) -> name('lo
 // patient pages 
 Route::get('/patient-register', [ FrontendController::class, 'showPatientRegisterPage' ]) -> name('patient.reg.page');
 Route::get('/patient-dashboard', [ FrontendController::class, 'showPatientDashPage' ]) -> name('patient.dash.page');
-
+Route::post('/patient-register',  [ PatientAuthController::class, 'register' ]) -> name('patient.register');
+Route::post('/patient-login',  [ PatientAuthController::class, 'login' ]) -> name('patient.login');
 
 // patient pages 
 Route::get('/doctor-register', [ FrontendController::class, 'showDoctorRegisterPage' ]) -> name('doctor.reg.page');
