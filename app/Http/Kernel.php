@@ -63,5 +63,9 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'asraf' => \App\Http\Middleware\AsrafulMiddleware::class, 
+        'apple' => \App\Http\Middleware\FoodMiddleware::class,  
+        'admin' => \App\Http\Middleware\Admin\AdminAuthMiddleware::class,  
+        'admin.redirect' => \App\Http\Middleware\Admin\AdminAuthRedirectMiddleware::class,  
     ];
 }
