@@ -18,7 +18,7 @@
                 <span>Message</span>
                 <small class="unread-msg">23</small> 
             </a>
-        </li>
+        </li> 
         <li>
             <a href="{{ route('patient.settings.page') }}">
                 <i class="fas fa-user-cog"></i>

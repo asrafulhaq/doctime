@@ -18,6 +18,7 @@ Route::get('/patient-register', [ FrontendController::class, 'showPatientRegiste
 Route::get('/patient-dashboard', [ FrontendController::class, 'showPatientDashPage' ]) -> name('patient.dash.page') -> middleware('admin');
 Route::get('/patient-settings', [ PatientProfileController::class, 'showPatientSettingsPage' ]) -> name('patient.settings.page') -> middleware('admin');
 Route::get('/patient-password', [ PatientProfileController::class, 'showPatientPasswordPage' ]) -> name('patient.password.page') -> middleware('admin');
+Route::post('/patient-password', [ PatientProfileController::class, 'patientPasswordChange' ]) -> name('patient.password.change') -> middleware('admin');
 
 Route::post('/patient-register',  [ PatientAuthController::class, 'register' ]) -> name('patient.register');
 Route::post('/patient-login',  [ PatientAuthController::class, 'login' ]) -> name('patient.login');
