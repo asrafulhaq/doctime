@@ -52,11 +52,17 @@
                                     <span class="span-or">or</span>
                                 </div>
                                 <div class="row form-row social-login">
-                                    <div class="col-6">
-                                        <a href="#" class="btn btn-facebook btn-block"><i class="fab fa-facebook-f mr-1"></i> Login</a>
+                                    <div class="col-4">
+                                        <a href="{{ url('facebook-login-req') }}" class="btn btn-facebook btn-block"><i class="fab fa-facebook-f mr-1"></i> Login</a>
                                     </div>
-                                    <div class="col-6">
-                                        <a href="#" class="btn btn-google btn-block"><i class="fab fa-google mr-1"></i> Login</a>
+                                    <div class="col-4">
+                                        <a href="{{ url('google-login-req') }}" class="btn btn-google btn-block"><i class="fab fa-google mr-1"></i> Login</a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="{{ url('github-login-req') }}" class="btn bg-info text-light btn-block"><i class="fab fa-github mr-1"></i> Login</a>
+                                    </div>
+                                    <div class="col-4">
+                                        <a href="{{ url('linkedin-login-req') }}" class="btn bg-info text-light btn-block"><i class="fab fa-linkedin mr-1"></i> Login</a>
                                     </div>
                                 </div>
                             </form>

@@ -4,15 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User;
-use Illuminate\Notifications\Notifiable;
 
-class Patient extends User
+class Post extends Model
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
+
 
     protected $guarded = [];
 
 
+    public function user()
+    {
+        return $this -> belongsTo(User::class, 'user_id','id');
+    }
 
+
+    
 }

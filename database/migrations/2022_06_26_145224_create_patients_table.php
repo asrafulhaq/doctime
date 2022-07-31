@@ -16,17 +16,16 @@ return new class extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email') -> unique();
-            $table->string('mobile') -> unique();
-            $table->string('password');
+            $table->string('email') -> unique() -> nullable();
+            $table->string('password') -> nullable();
             $table->string('photo') -> nullable();
-            $table->string('blood_group') -> nullable();
-            $table->string('date_of_birth') -> nullable();
-            $table->integer('age') -> nullable();
-            $table->text('address') -> nullable();
-            $table->string('country') -> nullable();
-            $table->string('city') -> nullable();
-            $table->boolean('status') -> default(true);
+            $table->string('access_token') -> nullable();
+            $table->string('facebook_id') -> nullable();
+            $table->string('twitter_id') -> nullable();
+            $table->string('linked_id') -> nullable();
+            $table->string('google_id') -> nullable();
+            $table->string('github_id') -> nullable();
+            $table->boolean('status') -> default(false);
             $table->boolean('trash') -> default(false);
             $table->timestamps();
         });

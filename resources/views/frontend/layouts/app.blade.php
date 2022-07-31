@@ -63,6 +63,19 @@
 		
 		<!-- Custom JS -->
 		<script src="{{ asset('frontend/assets/js/script.js') }}"></script>
+		<script>
+			$('#show_pass').change(function(){
+
+				let attr = $('#new_pass').attr('type');
+
+				if(attr == 'password'){
+					$('#new_pass').attr('type', 'text');
+				}else {
+					$('#new_pass').attr('type', 'password');
+				}
+				
+			});
+		</script>
 		
 	</body>
 
